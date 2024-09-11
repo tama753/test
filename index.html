@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instagram OAuth Redirect</title>
+
+    <script>
+
+        // Instagram APIからのアクセストークンを取得
+
+        function getAccessToken() {
+
+            const hash = window.location.hash;
+
+            if (hash) {
+
+                const token = hash.split('=')[1];
+
+                if (token) {
+
+                    document.getElementById("token").innerText = "Access Token: " + token;
+
+                    console.log("Access Token:", token);
+
+                    // ここでアクセストークンをサーバーに送信したり、必要な処理を行います
+
+                }
+
+            }
+
+        }
+
+
+
+        window.onload = getAccessToken;
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Instagram OAuth Redirect</h1>
+
+    <p id="token">Access Token will appear here</p>
+
+</body>
+
+</html>
+
